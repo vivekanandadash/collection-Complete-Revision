@@ -1,7 +1,6 @@
 package list;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -80,7 +79,53 @@ public class ArrayListDemo {
         l4.retainAll(l3);
         System.out.println(l3);
         System.out.println(l4);
+//      we can create object through Arraylist and the return type is Collection interface as (Arraylist implements List & List extends Collection)
+//        Collection c = new ArrayList();
+//        c.add(54);
+//        System.out.println(c);
 
 
+        List<Integer> lst = new ArrayList<>();
+        lst.add(21);
+        lst.add(51);
+        lst.add(101);
+
+//     Approach-1 -> Using for loop
+        System.out.println("=========For loop approach====================");
+        for (int i = 0 ; i < lst.size() ;i++){
+            System.out.println(lst.get(i));
+        }
+
+        System.out.println("===========For-each loop approach==============");
+
+//        Approach-2 -> Using for each Loop
+
+        for (Integer num : lst){
+            System.out.println(num);
+        }
+        System.out.println("==========Iterator Approach===================");
+//        Approach-3 -> Using Iterator
+        Iterator<Integer> iterator = lst.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+//        Approach-4 -> Using listIterator
+        System.out.println("==========listIterator Approach===================");
+
+        ListIterator<Integer> integerListIterator = lst.listIterator();
+        while (integerListIterator.hasNext()){
+            System.out.println(integerListIterator.next());
+        }
+        //        Approach-5 -> Using forEach method in lambda function
+        System.out.println("==========forEach() Approach===================");
+
+        lst.forEach(num -> {
+            System.out.println(num);
+        });
+
+        //        Approach-6 -> Using  method reference
+        System.out.println("==========Using  method reference===================");
+        lst.forEach(System.out::println);
     }
 }
