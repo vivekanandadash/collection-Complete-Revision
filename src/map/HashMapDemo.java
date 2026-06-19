@@ -43,7 +43,14 @@ public class HashMapDemo {
         for (Map.Entry<Integer ,String> ent : entries){
             System.out.println(ent);
         }
+        HashMap<Integer, String> trail = new HashMap<>();
 
+        trail.put(7, "david");
+        trail.put(1, "jaga");
+        trail.put(5, "bob");
+        trail.put(3, "subhadra");
+        trail.put(2, "balia");
 
+        System.out.println(trail);
     }
 }
