@@ -13,6 +13,7 @@ public class ProductDemo {
 
         products.sort(new ProductIdComparator());
         for (Product product : products){
+            //Print the number
             System.out.println(product);
         }
     }
