@@ -1,6 +1,8 @@
 package sorting;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ProductDemo {
@@ -14,7 +16,15 @@ public class ProductDemo {
 //        products.sort(new ProductIdComparator());
 
 //        Comparing and sorting based on price
-        products.sort(new ProductPriceComparator());
+//        products.sort(new ProductPriceComparator());
+//        INSTEAD OF BOTH THESE ABOVE , WE CAN ALSO USE ANONYMOUS IMPLEMENTATION
+        Collections.sort(products, new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return Long.compare(p1.eks, p2.eks);
+            }
+            
+        });
         for (Product product : products){
             //Print the number
             System.out.println(product);
