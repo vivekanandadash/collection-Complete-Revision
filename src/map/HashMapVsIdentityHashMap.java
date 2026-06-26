@@ -3,7 +3,7 @@ package map;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 
-public class HashMapVsConcurrentHashMap {
+public class HashMapVsIdentityHashMap {
     public static void main(String[] args) {
         HashMap<String,Integer> map = new HashMap<>();
         map.put("Alice" , 101);
