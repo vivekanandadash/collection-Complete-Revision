@@ -2,6 +2,7 @@ package sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class EmployeeDemo {
@@ -18,8 +19,26 @@ public class EmployeeDemo {
 //        We can use directly sort method like below
 //        employees.sort(new EmployeeIdComparator());
 
+//        Use direct Anonymous Implementation
+        Collections.sort(employees, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee e1, Employee e2) {
+                if (e1.salary > e2.salary){
+                    return -1;
+                } else if (e1.salary < e2.salary) {
+                    return 1;
+                }else {
+                    return 0;
+                }
+
+
+            }
+
+        });
+
+
 //         COMPARE BY NAME
-        employees.sort(new EmployeeNameComparator());
+//        employees.sort(new EmployeeNameComparator());
         employees.forEach(System.out::println);
     }
 }
