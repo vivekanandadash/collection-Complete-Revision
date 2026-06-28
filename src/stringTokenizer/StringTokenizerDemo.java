@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 
 public class StringTokenizerDemo {
     public static void main(String[] args) {
-        String s = "Java Programming Class";
+        String s = "We are learning String tokenizer";
         StringTokenizer st = new StringTokenizer(s , " ");
         while (st.hasMoreTokens()){
             System.out.println(st.nextToken());
